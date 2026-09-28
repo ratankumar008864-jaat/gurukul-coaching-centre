@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gurukul Coaching Centre</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:linear-gradient(135deg,#173b8f,#2463d4);color:white;padding:22px 18px;position:sticky;top:0;z-index:10}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:800} nav a{color:white;text-decoration:none;margin:0 7px;font-weight:600}
+.hero{max-width:1100px;margin:25px auto;padding:45px 25px;border-radius:22px;background:white;box-shadow:0 8px 30px #0001}
+.hero h1{font-size:42px;margin:0 0 12px} .hero p{font-size:18px;color:#526070}
+.btn{display:inline-block;padding:12px 18px;border:0;border-radius:10px;background:#1769e0;color:#fff;text-decoration:none;font-weight:700;cursor:pointer}
+section{max-width:1100px;margin:25px auto;padding:0 18px} h2{font-size:28px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:#fff;padding:22px;border-radius:16px;box-shadow:0 5px 20px #0000000d}
+.pay{border:2px solid #1769e0} .upi{font-size:20px;font-weight:800;word-break:break-all}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden}
+th,td{padding:12px;border-bottom:1px solid #e8ebf0;text-align:left} th{background:#edf3ff}
+.search{width:100%;padding:13px;border:1px solid #ccd3df;border-radius:10px;margin:8px 0 15px}
+.status{font-weight:700} .unpaid{color:#c62828} .paid{color:#16803c}
+footer{margin-top:40px;background:#14213d;color:white;padding:25px;text-align:center}
+@media(max-width:650px){.hero h1{font-size:32px} table{font-size:13px} th,td{padding:8px} nav a{font-size:13px}}
+</style>
+</head>
+<body>
+<header><nav>
+<div class="logo">🎓 Gurukul Coaching Centre</div>
+<div><a href="#home">Home</a><a href="#students">Students</a><a href="#payment">Fee Payment</a><a href="#contact">Contact</a></div>
+</nav></header>
+
+<main id="home">
+<div class="hero">
+<h1>Gurukul Coaching Centre</h1>
+<p>Quality education, regular guidance and simple student fee management.</p>
+<a class="btn" href="#students">View Students</a>
+<a class="btn" href="#payment" style="margin-left:8px">Pay Tuition Fee</a>
+</div>
+
+<section>
+<h2>Our Services</h2>
+<div class="cards">
+<div class="card"><h3>📚 Study Support</h3><p>Students can access coaching information and study resources.</p></div>
+<div class="card"><h3>👨‍🎓 Student Records</h3><p>Student name, mobile number and joining date are maintained.</p></div>
+<div class="card pay"><h3>💳 Monthly Tuition Fee</h3><p><b>₹1,000 / month</b></p><p>UPI payment available.</p></div>
+</div>
+</section>
+
+<section id="students">
+<h2>Student Biodata</h2>
+<input id="search" class="search" placeholder="Search student by name or mobile number..." oninput="renderStudents()">
+<div style="overflow:auto">
+<table>
+<thead><tr><th>#</th><th>Name</th><th>Mobile</th><th>Date</th><th>Monthly Fee</th><th>Status</th></tr></thead>
+<tbody id="studentRows"></tbody>
+</table>
+</div>
+</section>
+
+<section id="payment">
+<h2>💳 Tuition Fee Payment</h2>
+<div class="card pay">
+<p><b>Monthly Tuition Fee:</b> ₹1,000</p>
+<p><b>Payment Number:</b> 7983683204</p>
+<p><b>UPI ID:</b></p>
+<p class="upi">7983683204@ybl</p>
+<a class="btn" href="upi://pay?pa=7983683204@ybl&pn=Gurukul%20Coaching%20Centre&cu=INR&am=1000">Pay ₹1,000 by UPI</a>
+<p style="color:#667085">UPI button आपके मोबाइल में उपलब्ध UPI app को खोलने की कोशिश करेगा. Payment के बाद receipt/reference number सुरक्षित रखें.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card"><p><b>Gurukul Coaching Centre</b></p><p>Tuition Fee Payment: 7983683204</p><p>UPI: 7983683204@ybl</p></div>
+</section>
+</main>
+
+<footer>© 2026 Gurukul Coaching Centre</footer>
+<script>
+const students = [{"name": "Pravesh Chaudhary", "mobile": "8273495473", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Vinay Chaudhary", "mobile": "8006688916", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Amit Kumar", "mobile": "6396195633", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Dev", "mobile": "9058658142", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Racht", "mobile": "8630443778", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Tejas", "mobile": "8273179974", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Kanha", "mobile": "9720062065", "date": "10/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Ratan Chaudhary", "mobile": "8445672256", "date": "22/06/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Abhay", "mobile": "9068211219", "date": "05/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Nakshatra", "mobile": "8273179974", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Omprakash", "mobile": "6395357570", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Ratan", "mobile": "7906183101", "date": "01/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Sumit", "mobile": "7088896733", "date": "01/08/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Golu", "mobile": "8279992025", "date": "25/07/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Nitin", "mobile": "9193467200", "date": "01/08/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Love", "mobile": "8859075402", "date": "10/08/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Mukul", "mobile": "6395167229", "date": "10/08/2026", "fee": 1000, "status": "Unpaid"}, {"name": "Abhishek Faujudar", "mobile": "9528390529", "date": "10/09/2026", "fee": 1000, "status": "Unpaid"}];
+function renderStudents(){
+ const q=document.getElementById('search').value.toLowerCase();
+ const rows=students.filter(s=>(s.name+' '+s.mobile).toLowerCase().includes(q));
+ document.getElementById('studentRows').innerHTML=rows.map((s,i)=>`
+ <tr><td>${i+1}</td><td><b>${s.name}</b></td><td>${s.mobile}</td><td>${s.date}</td><td>₹${s.fee}</td>
+ <td class="status ${s.status.toLowerCase()}">${s.status}</td></tr>`).join('');
+}
+renderStudents();
+</script>
+</body></html>
